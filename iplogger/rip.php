@@ -1,4 +1,4 @@
-<?php
+<?php //3H
 
 date_default_timezone_set('Europe/Paris');
 $geoplugin = unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip='.$_POST['ip']));
